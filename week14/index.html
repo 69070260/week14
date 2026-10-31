@@ -2,80 +2,64 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <title>Profile Card & To-do List</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: sans-serif;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-            display: flex;
-            padding: 20px;
-            width: 600px;
-        }
-
-        .profile {
-            width: 50%;
-            padding-right: 15px;
-        }
-
-        .todo {
-            width: 50%;
-            padding-left: 15px;
-            border-left: 1px solid #ccc;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            padding: 4px 0;
-            border-bottom: 1px dashed #eee;
-        }
-
-        button {
-            cursor: pointer;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODPICKER ITF - Gourmet Menu</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card">
-        
-        <div class="profile">
-            <img src="image.png" alt="รูปโปรไฟล์" width="100">
-            <h2>Takdanai Nakavanitvetchasit</h2>
-            <p>69070260 / IT KMITL</p>
-            <p>POM LUK MYGIRLFRIEND T SOOD NAI ROOKKKKK!!!</p>
-            <a href="https://www.instagram.com/bosstakdanai/" target="_blank">ช่องทางติดต่อ Instagram</a>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="brand">
+                <i class="fa-solid fa-utensils brand-icon"></i>
+                <span class="brand-text">FOODPICKER <small>ITF</small></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="active"><i class="fa-solid fa-house"></i> หน้าแรก</a></li>
+                <li><a href="#"><i class="fa-solid fa-bowl-food"></i> เมนูแนะนำ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="wrapper">
+        <div class="hero-header">
+            <span class="badge-subtitle">✨ วันนี้กินอะไรดี? ✨</span>
+            <h1>ค้นพบเมนูสุดโปรดของคุณ</h1>
+            <p>กดปุ่มด้านล่างเพื่อสุ่มเมนูอาหารแสนอร่อยประจำมื้อนี้</p>
         </div>
 
-        <div class="todo">
-            <h2>To-do List</h2>
-            <input type="text" id="todo-input" placeholder="พิมพ์สิ่งที่ต้องทำ...">
-            <button id="add-btn">เพิ่ม</button>
+        <!-- Food Display Card -->
+        <div class="food-card" id="food-card">
+            <div class="img-wrapper">
+                <span class="category-tag"><i class="fa-solid fa-star"></i> เมนูฮิต</span>
+                <img id="food-image" src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=800&q=80" alt="รูปเมนูอาหาร">
+            </div>
 
-            <ul id="todo-list"></ul>
+            <div class="food-details">
+                <div class="title-price-row">
+                    <h2 id="food-name">ข้าวมันไก่สูตรไหหลำ</h2>
+                    <div class="price-badge">
+                        <span id="food-price">50</span> <small>บาท</small>
+                    </div>
+                </div>
+
+                <p id="food-desc">ข้าวมันหอมนุ่มเคี่ยวด้วยน้ำสต๊อกไก่ เสิร์ฟพร้อมเนื้อไก่ต้มฉ่ำๆ และน้ำจิ้มเต้าเจี้ยวพริกสดขิงหอมเข้มข้น</p>
+
+                <button id="random-btn" class="btn-random">
+                    <i class="fa-solid fa-dice"></i>
+                    <span>สุ่มเมนูใหม่</span>
+                </button>
+            </div>
         </div>
-
-    </div>
+    </main>
 
     <script src="script.js"></script>
-
 </body>
 </html>
